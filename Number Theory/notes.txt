@@ -1,0 +1,68 @@
+1. Modulo Arithmetic:
+    (a+b) mod m = ((a mod m) + (b mod m)) mod m
+    (a*b) mod m = ((a mod m) * (b mod m)) mod m
+    (a-b) mod m = ((a mod m) - (b mod m) + m) mod m
+    (a/b) mod m = (a * b^-1) mod m  -->  where b^{-1} is the modular multiplicative inverse of b modulo m.
+    
+
+2. nth Term of a recurrence relation with k dependent terms:
+    F(n) = F(n-1) + F(n-2)
+    k = 2(depends on 2 terms)
+	
+    a)Create a transition matrix T of k*k
+	
+	(F1 F2) * (A B) = (F2 F3)
+		       (C D)
+
+	b)Find value of A B C D -> 0 1 1 1 (for fibonacci)
+	
+	=> (F1 F2) * (A B) ^ n = (F1+n  F2+n) ; Use Matrix exponentiation
+		         (C D)
+
+	General formula:
+	Nth Term of recurrence relation with k dependent terms:
+	(linear matrix of k terms) * (transition matrix) ^ n = (nth terms)
+
+
+3. Given Prime factorization, Find no. of divisors of N:
+	N = P1^{y1} * P2^{y2} * P3^{y3} * ... * Pn^{yn}
+	
+	Total divisors = (y1 + 1) * (y2 + 1) * (y3 + 1) * ... * (yn + 1)
+	Where {P} are prime factors and {yi} are their powers (exponents).
+
+
+4. No. of +ve int upto n, coprime to n: Euler Totient Function(ETF):
+	phi(N) = N * (P1 - 1) * (P2 - 1) * (P3 - 1) *...* (Pk - 1)
+				--------   --------   --------       --------
+				   P1		  P2		 P3		  	    Pk
+	Where Pi are unique Prime factors of N
+
+5. Number of Common Divisors of N and K:
+	a) Find gcd(N, K): Calculate the Greatest Common Divisor (G) of N and K:
+		G = gcd(N, K)
+	b) Factorize G: Find the prime factorization of G:
+		G = P1^{g1} * P2^{g2} * ... * Pn^{gn}
+	c) Count Divisors: Apply the standard divisor counting formula to G. The number of common divisors is the total number of divisors of G.
+		Count = (g1 + 1) * (g2 + 1) * ... * (gn + 1)
+
+
+6) Stars and Bars Problem:
+	General Solution: A1 + A2 + A3 + ... + Ak = N
+	Stars = N 
+	Bars = K - 1
+
+	a) Number of Non-Negative Solutions of Equation:
+		Total Integer Solution = C(N+K-1, K-1) or C(N+K-1, N)
+	
+	b) Number of Non-Negative Non-Zero Solutions of Equation:
+		General Solution = C(N-1, K-1)
+
+
+7) Pigeon hole principle:
+	The Pigeonhole principle states that, if there are N holes and N + 1 pigeons, then at least 1 hole will have 2 or more pigeons.
+
+8) Is it possible for N = A1 + A2 + … where A is composite.
+	if (N == 4 || N == 6 || N == 8 || N == 9 || N == 10 || N >= 12)
+    	cout << "Yes\n";
+	else
+    	cout << "No\n";
