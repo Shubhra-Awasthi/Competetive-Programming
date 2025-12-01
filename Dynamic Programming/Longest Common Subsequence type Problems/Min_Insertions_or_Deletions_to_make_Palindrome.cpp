@@ -1,4 +1,9 @@
-// Longest Palindromic Subsequence
+// just count the lps and subtract it from string size
+int minInsertions(string s)
+{
+    return s.size() - lps(s);
+}
+
 int lps(string s)
 {
     string s1 = s;
