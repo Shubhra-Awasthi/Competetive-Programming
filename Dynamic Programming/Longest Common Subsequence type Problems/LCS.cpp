@@ -33,3 +33,30 @@ int lcs(string s1, string s2)
 
     return dp[n][m];
 }
+
+// 3) Printing LCS
+string printLCS(string s1, string s2)
+{
+    lcs(s1, s2); // Fill the dp table using the above lcs function
+
+    // Now, reconstruct the LCS from the dp table
+    int i = n, j = m;
+    string lcs_str;
+
+    while (i > 0 && j > 0)
+    {
+        if (s1[i - 1] == s2[j - 1])
+        {
+            lcs_str.push_back(s1[i - 1]);
+            i--;
+            j--;
+        }
+        else if (dp[i - 1][j] > dp[i][j - 1])
+            i--;
+        else
+            j--;
+    }
+
+    reverse(lcs_str.begin(), lcs_str.end());
+    return lcs_str;
+}
