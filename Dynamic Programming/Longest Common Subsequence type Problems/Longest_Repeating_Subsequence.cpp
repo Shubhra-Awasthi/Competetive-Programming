@@ -4,6 +4,7 @@ int LRS(string s)
     return modifiedlcs(s, s1);
 }
 
+// adding i != j because we need seperate elements for separate subsequences
 int modifiedlcs(string s1, string s2)
 {
     int n = s1.size();
