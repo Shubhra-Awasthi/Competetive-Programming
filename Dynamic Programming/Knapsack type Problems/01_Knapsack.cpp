@@ -27,7 +27,7 @@ int knapsack(const vector<int> &wt, const vector<int> &val, int W, int n)
         for (int j = 1; j <= W; j++)
         {
             if (wt[i - 1] <= j)
-                dp[i][j] = max(val[i - 1] + dp[i - 1][j - wt[i - 1]], dp[i - 1][j]);
+                dp[i][j] = max(dp[i - 1][j], val[i - 1] + dp[i - 1][j - wt[i - 1]]);
             else
                 dp[i][j] = dp[i - 1][j];
         }
