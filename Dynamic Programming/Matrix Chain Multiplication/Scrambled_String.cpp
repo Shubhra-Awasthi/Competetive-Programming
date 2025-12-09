@@ -34,6 +34,7 @@ int solve(int i, int j, int len)
     return mem = 0;
 }
 
+// slower by log n factor
 bool sameCount(int i, int j, int len)
 {
     multiset<char> s1(a.begin() + i, a.begin() + i + len);
