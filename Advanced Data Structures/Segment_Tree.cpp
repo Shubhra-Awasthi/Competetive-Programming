@@ -2,7 +2,7 @@
 int arr[n], seg[4 * n];
 
 void build(int idx, int lo, int hi)
-{
+{ // O(n)
     if (lo == hi)
     {
         seg[idx] = arr[lo];
@@ -18,7 +18,7 @@ void build(int idx, int lo, int hi)
 }
 
 int query(int idx, int lo, int hi, int l, int r)
-{
+{ // O(log n)
     if (r < lo || hi < l)
         return 0; // change acc to que
     if (l <= lo && hi <= r)
@@ -33,7 +33,7 @@ int query(int idx, int lo, int hi, int l, int r)
 }
 
 void pointUpdate(int idx, int lo, int hi, int pos, int val)
-{
+{ // O(log n)
     if (lo == hi)
         seg[idx] = val; // change acc to que
     else
@@ -52,7 +52,7 @@ void pointUpdate(int idx, int lo, int hi, int pos, int val)
 
 // lazy propagation for range update
 void rangeUpdate(int idx, int lo, int hi, int l, int r, int val)
-{
+{ // O(log n)
     // pending updates
     if (lazy[idx])
     {
@@ -95,7 +95,7 @@ void rangeUpdate(int idx, int lo, int hi, int l, int r, int val)
 }
 
 int querySumLazy(int idx, int lo, int hi, int l, int r, int val)
-{
+{ // O(log n)
     // pending updates
     if (lazy[idx])
     {

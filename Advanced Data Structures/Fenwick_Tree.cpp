@@ -1,7 +1,7 @@
 int fen[n];
 
 void update(int i, int add)
-{
+{ // O(log n)
     while (i < n)
     {
         fen[i] += add;
@@ -11,7 +11,7 @@ void update(int i, int add)
 
 // range sum query from 1 to i
 void query(int i)
-{
+{ // O(log n)
     int sum = 0;
     while (i > 0)
     {
@@ -23,7 +23,7 @@ void query(int i)
 
 // binary lifting: lower bound for prefix sums
 int find(int val)
-{
+{ // O(log n)
     int idx = 0;
     for (int i = log2(n); i >= 0; i--)
     {
