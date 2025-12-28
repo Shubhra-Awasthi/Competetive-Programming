@@ -1,4 +1,6 @@
-// Seg tree code for range sum query
+// Usage - sum, min, max, lcm, gcd, xor, and/or, range cnt, max subarr sum, custom merge quer
+// Can do - range qry, pt upd, range upd, range sum/min/max/gcd/xor, lazy propagation
+
 int arr[n], seg[4 * n];
 
 void build(int idx, int lo, int hi)

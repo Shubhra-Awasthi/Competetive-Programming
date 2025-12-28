@@ -1,3 +1,6 @@
+// Usage - min, max, gcd, and/or
+// Can do - RMQ(Range min/max Qry), LCA(Lowest Common Ancestor), LCP(Longest Common Prefix)
+
 int arr[n];
 int st[n][log(n) + 1];
 

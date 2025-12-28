@@ -1,3 +1,6 @@
+// Usage - sum, xor, freq cnt, pref min/max, k-th element
+// Can do - pref sum, range sum, pt upd, range upd + pt qry, k-th element
+
 int fen[n];
 
 void update(int i, int add)
