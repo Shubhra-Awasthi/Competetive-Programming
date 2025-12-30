@@ -6,17 +6,16 @@ int arr[n], seg[4 * n];
 void build(int idx, int lo, int hi)
 { // O(n)
     if (lo == hi)
-    {
         seg[idx] = arr[lo];
-        return;
+    else
+    {
+        int mid = (lo + hi) >> 1;
+
+        build(2 * idx + 1, lo, mid);
+        build(2 * idx + 2, mid + 1, hi);
+
+        seg[idx] = seg[2 * idx + 1] + seg[2 * idx + 2]; // change acc to que
     }
-
-    int mid = (lo + hi) >> 1;
-
-    build(2 * idx + 1, lo, mid);
-    build(2 * idx + 2, mid + 1, hi);
-
-    seg[idx] = seg[2 * idx + 1] + seg[2 * idx + 2]; // change acc to que
 }
 
 int query(int idx, int lo, int hi, int l, int r)

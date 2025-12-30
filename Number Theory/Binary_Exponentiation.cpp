@@ -1,10 +1,10 @@
-lli binexp(lli base, lli exp, lli modulus = 1e9 + 7)
+ll binexp(ll base, ll exp, ll modulus = 1e9 + 7)
 {
-    lli res = 1;
+    ll res = 1;
     base %= modulus;
     while (exp > 0)
     {
-        if (exp % 2 == 1)
+        if (exp & 1)
         {
             res = ((__int128)res * base) % modulus;
         }

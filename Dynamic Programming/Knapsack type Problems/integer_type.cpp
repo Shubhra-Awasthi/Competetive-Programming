@@ -37,9 +37,7 @@ int minDifference(vector<int> &arr)
                     maxi_sum = max(maxi_sum, j);
             }
             else
-            {
                 dp[i][j] = dp[i - 1][j];
-            }
 
     return abs(maxi_sum - (sum - maxi_sum));
 }

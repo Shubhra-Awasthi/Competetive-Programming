@@ -23,7 +23,7 @@ bool MillerRabin(u64 n)
 
     int r = 0;
     u64 d = n - 1;
-    while ((d & 1) == 0)
+    while (!(d & 1))
     {
         d >>= 1;
         r++;

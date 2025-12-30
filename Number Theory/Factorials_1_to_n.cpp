@@ -1,4 +1,4 @@
-int n, m; // m is prime
+int n, mod; // mod is prime
 int fact[n], inv_fact[n];
 
 void init()
@@ -7,19 +7,19 @@ void init()
     int i;
 
     for (i = 1; i < n; i++)
-        fact[i] = i * fact[i - 1] % m;
+        fact[i] = i * fact[i - 1] % mod;
     i--;
 
-    inv_fact[i] = pw(fact[i], m - 2, m);
+    inv_fact[i] = pw(fact[i], mod - 2, mod);
     for (i--; i >= 0; i--)
-        inv_fact[i] = inv_fact[i + 1] * (i + 1) % m;
+        inv_fact[i] = inv_fact[i + 1] * (i + 1) % mod;
 }
 
 int ncr(int n, int r)
 {
     if (r > n || n < 0 || r < 0)
         return 0; // ncr invalid
-    return fact[n] * (inv_fact[r] % m) * (inv_fact[n - r] % m);
+    return fact[n] * (inv_fact[r] % mod) * (inv_fact[n - r] % mod);
 }
 
-// O(n + log m)
+// O(n + log mod)

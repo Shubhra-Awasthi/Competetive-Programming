@@ -1,9 +1,7 @@
 int gcd(int a, int b)
 {
-    if (a == 0)
-    {
+    if (!a)
         return b;
-    }
     return gcd(b % a, a);
 }
 

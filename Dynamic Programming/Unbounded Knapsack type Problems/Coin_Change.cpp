@@ -1,5 +1,4 @@
 // 1) Max number of ways
-
 int change(int amount, vector<int> &coins)
 {
     int n = coins.size();
@@ -19,7 +18,6 @@ int change(int amount, vector<int> &coins)
 }
 
 // 2) Min number of coins
-
 int coinChange(vector<int> &coins, int amount)
 {
     int n = coins.size();

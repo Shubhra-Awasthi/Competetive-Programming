@@ -12,7 +12,7 @@
     a)Create a transition matrix T of k*k
 	
 	(F1 F2) * (A B) = (F2 F3)
-		       (C D)
+		      (C D)
 
 	b)Find value of A B C D -> 0 1 1 1 (for fibonacci)
 	

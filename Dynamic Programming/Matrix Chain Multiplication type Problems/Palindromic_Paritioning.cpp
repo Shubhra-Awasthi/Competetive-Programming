@@ -43,38 +43,23 @@ int minCut(string s)
 
 // 2) optimized O(n^2)
 
-bool isPalindrome(int i, int j, string &s)
-{
-    while (i < j)
-        if (s[i++] != s[j--])
-            return false;
-    return true;
-}
-
 int minCut(string s)
 {
     int n = s.size();
-
-    // dp[i] = minimum cuts needed from index i to end
     vector<int> dp(n + 1, 0);
 
-    dp[n] = 0; // empty substring → zero cuts
+    for (int i = 0; i <= n; i++)
+        dp[i] = n - i - 1; // worst case
 
     for (int i = n - 1; i >= 0; i--)
     {
-        int minCost = INT_MAX;
+        // Odd length palindromes
+        for (int l = i, r = i; l >= 0 && r < n && s[l] == s[r]; l--, r++)
+            dp[l] = min(dp[l], 1 + dp[r + 1]);
 
-        for (int j = i; j < n; j++)
-        {
-            if (isPalindrome(i, j, s))
-            {
-                int cost = 1 + dp[j + 1]; // cut + cost
-                minCost = min(minCost, cost);
-            }
-        }
-        dp[i] = minCost;
+        // Even length palindromes
+        for (int l = i, r = i + 1; l >= 0 && r < n && s[l] == s[r]; l--, r++)
+            dp[l] = min(dp[l], 1 + dp[r + 1]);
     }
-
-    // -1 for cut count not partitions
-    return dp[0] - 1;
+    return dp[0];
 }

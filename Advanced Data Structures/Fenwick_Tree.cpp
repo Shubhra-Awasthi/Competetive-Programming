@@ -3,11 +3,11 @@
 
 int fen[n];
 
-void update(int i, int add)
+void add(int i, int val)
 { // O(log n)
     while (i < n)
     {
-        fen[i] += add;
+        fen[i] += val;
         i += (i & -i);
     }
 }
