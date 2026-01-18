@@ -15,7 +15,8 @@ using namespace std;
 #define FR(i, n) for (int i = 0; i < n; i++)
 #define FR1(i, n) for (int i = 1; i < n; i++)
 #define FOR(i, a, b) for (int i = (a); i < (b); i++)
-#define ROF(i, n) for (int i = (n) - 1; i >= 0; i--)
+#define RF(i, n) for (int i = (n) - 1; i >= 0; i--)
+#define ROF(i, b, a) for (int i = b; i >= a; i--)
 #define EACH(x, a) for (auto &x : a)
 
 // --------------------------- CONSTANTS ---------------------------
@@ -62,6 +63,8 @@ using namespace std;
 #define lcm(a, b) ((a) * (b)) / gcd((a), (b))
 #define yes cout << "YES\n"
 #define no cout << "NO\n"
+#define alice cout << "Alice\n"
+#define bob cout << "Bob\n"
 
 // --------------------------- UTILITY TEMPLATES ---------------------------
 struct pairHash
