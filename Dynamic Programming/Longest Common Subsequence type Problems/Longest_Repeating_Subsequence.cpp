@@ -1,8 +1,4 @@
-int LRS(string s)
-{
-    string s1 = s;
-    return modifiedlcs(s, s1);
-}
+int LRS(string s) { return modifiedlcs(s, s); }
 
 // adding i != j because we need seperate elements for separate subsequences
 int modifiedlcs(string s1, string s2)

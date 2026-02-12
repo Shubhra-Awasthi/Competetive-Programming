@@ -38,6 +38,7 @@ using namespace std;
 #define pi pair<int, int>
 #define vpi vector<pi>
 #define vi vector<int>
+#define vvi vector<vi>
 #define vs vector<string>
 #define vc vector<char>
 #define si set<int>
@@ -51,6 +52,7 @@ using namespace std;
 #define pll pair<ll, ll>
 #define vpll vector<pll>
 #define vll vector<long long>
+#define vvll vector<vll>
 #define sll set<ll>
 #define usll unordered_set<ll>
 #define mll map<ll, ll>
